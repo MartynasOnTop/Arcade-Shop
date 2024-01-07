@@ -8,6 +8,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("salary", 3f, 3f);
+        //InvokeRepeating("salary", 3f, 3f);
     }
 }

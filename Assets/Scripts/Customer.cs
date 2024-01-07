@@ -5,12 +5,10 @@ using UnityEditor;
 public class Example : MonoBehaviour
 {
     public GameObject[] machines;
-    public GameObject[] customer;
+    public GameObject[] customers;
 
     public float timer;
     public float defaultTimer = 3;
-
-    new Vector3 offset;
 
     private void Start()
     {
@@ -22,27 +20,22 @@ public class Example : MonoBehaviour
         if (timer <= 0)
         {
             var index = Random.Range(0, machines.Length);
-            var customerIndex = Random.Range(0, customer.Length);
+            var customersIndex = Random.Range(0, customers.Length);
+
+            var Customer = customers[customersIndex];
+            var Machine = machines[index];
+
+            Instantiate(Customer, transform.position, transform.rotation);
             if (index > machines.Length / 2)
             {
-                offset = new Vector3(1.5f, 0, 0);
-                customer[customerIndex].transform.eulerAngles = new Vector3(0, -90, 0);
+                Customer.transform.eulerAngles = new Vector3(0, -90, 0);
             }
             else
             {
-                offset = new Vector3(-1.5f, 0, 0);
-                customer[customerIndex].transform.rotation = Quaternion.Euler(0, 90, 0);
+                Customer.transform.rotation = Quaternion.Euler(0, 90, 0);
             }
-            if (index == machines.Length / 2)
-            {
-                offset = new Vector3(0.5f, 0, 0);
-            }
-            else
-            {
-                offset = new Vector3(-0.5f, 0, 0);
-            }
-            Instantiate(customer[customerIndex]);
-            customer[customerIndex].transform.position = machines[index].transform.position + offset;
+
+            Customer.transform.position = Vector3.MoveTowards(Customer.transform.position, Machine.transform.position, 5f * Time.deltaTime);
 
             timer = defaultTimer;
         }
