@@ -5,19 +5,30 @@ using UnityEngine;
 public class Arcade : MonoBehaviour
 {
     public GameObject machine;
+    public GameObject playPosition;
     public int price;
-    public int profit;
 
-    private void OnTriggerEnter(Collider other)
+    public GameObject Option;
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.name.Contains("Player") && price <= GameManager.money)
         {
-            machine.SetActive(true);
-            Destroy(gameObject);
+            Option.SetActive(true);
         }
     }
-    public void salary()
+    private void OnTriggerExit(Collider other)
     {
-        GameManager.money += profit;
+        Option.SetActive(false);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) & Option.active)
+        {
+            playPosition.SetActive(true);
+            machine.SetActive(true);
+            Destroy(gameObject);
+            Option.SetActive(false);
+        }
     }
 }

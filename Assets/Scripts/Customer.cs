@@ -1,43 +1,54 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using UnityEngine.AI;
+using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 
 public class Example : MonoBehaviour
 {
     public GameObject[] machines;
     public GameObject[] customers;
 
-    public float timer;
-    public float defaultTimer = 3;
+    NavMeshAgent agent;
+
+    public Transform exit;
+
+    public float speed = 3f;
+
+    float timer;
+    public float defaultTimer = 5;
+    public float waitTimer = 8;
+    public float playTimer;
+
+    bool isOccupied;
 
     private void Start()
     {
         timer = defaultTimer;
+        isOccupied = false;
     }
     private void Update()
     {
+        machines = GameObject.FindGameObjectsWithTag("Arcade");
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            timer = defaultTimer;
+
             var index = Random.Range(0, machines.Length);
             var customersIndex = Random.Range(0, customers.Length);
 
             var Customer = customers[customersIndex];
             var Machine = machines[index];
 
-            Instantiate(Customer, transform.position, transform.rotation);
-            if (index > machines.Length / 2)
-            {
-                Customer.transform.eulerAngles = new Vector3(0, -90, 0);
-            }
-            else
-            {
-                Customer.transform.rotation = Quaternion.Euler(0, 90, 0);
-            }
+            var shoper = Instantiate(Customer, transform.position, transform.rotation);
 
-            Customer.transform.position = Vector3.MoveTowards(Customer.transform.position, Machine.transform.position, 5f * Time.deltaTime);
+            agent = shoper.GetComponent<NavMeshAgent>();
 
-            timer = defaultTimer;
+            agent.speed = speed;
+
+            agent.destination = Machine.transform.position;
         }
     }
 }
