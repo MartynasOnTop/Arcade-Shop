@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Arcade
   - Customer
+  - DeadZone
   layers:
   - Default
   - TransparentFX

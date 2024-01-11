@@ -34,6 +34,7 @@ public class Example : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            if (machines.Length == 0) return;
             timer = defaultTimer;
 
             var index = Random.Range(0, machines.Length);
