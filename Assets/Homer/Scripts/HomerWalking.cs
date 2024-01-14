@@ -36,20 +36,20 @@ public class HomerWalking : MonoBehaviour
 
         if(Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-1 * speed, 0, 0);
+            transform.position += new Vector3(-1 * speed * Time.deltaTime, 0, 0);
             animator.Play("Walking");
             if (transform.position.x < -6.3)
             {
-                transform.position -= new Vector3(-1 * speed, 0, 0);
+                transform.position -= new Vector3(-1 * speed * Time.deltaTime, 0, 0);
             }
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(1 * speed, 0, 0);
+            transform.position += new Vector3(1 * speed * Time.deltaTime, 0, 0);
             animator.Play("Walking");
             if (transform.position.x > 6.3)
             {
-                transform.position -= new Vector3(1 * speed, 0, 0);
+                transform.position -= new Vector3(1 * speed * Time.deltaTime, 0, 0);
             }
         }
         else

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tetris/Scenes/TetrisOver.unity
     guid: 2ce9cb07eb5c9044fb23ed635835730f
+  - enabled: 1
+    path: Assets/Snake/Scenes/Snake.unity
+    guid: 942a159b39df67546948e3e5742d20e0
+  - enabled: 1
+    path: Assets/Snake/Scenes/SnakeOver.unity
+    guid: 573d324962173a24bad27382f500f24a
   m_configObjects: {}

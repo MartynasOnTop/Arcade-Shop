@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SnakeMove : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SnakeMove : MonoBehaviour
     public int Gap = 10;
     public float bodySpeed = 5;
 
+    public GameObject apple;
+
     public GameObject bodyPrefab;
     private List<GameObject> BodyParts = new List<GameObject>();
     private List<Vector3> PositionHistory = new List<Vector3>();
@@ -16,11 +19,7 @@ public class SnakeMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Grow();
-        Grow();
-        Grow();
-        Grow();
-        Grow();
+        Instantiate(apple, new Vector3(Random.Range(-9, 9), 3.1f, Random.Range(-9, 9)), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -49,4 +48,19 @@ public class SnakeMove : MonoBehaviour
         GameObject body = Instantiate(bodyPrefab);
         BodyParts.Add(body);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Contains("apple"))
+        {
+            Destroy(collision.gameObject);
+            Grow();
+            Instantiate(apple, new Vector3(Random.Range(-9, 9), 3.1f, Random.Range(-9, 9)), Quaternion.identity);
+        }
+        if (collision.gameObject.name.Contains("Body") || collision.gameObject.name.Contains("Wall"))
+        {
+            SceneManager.LoadScene("SnakeOver");
+        }
+    }
 }
+
