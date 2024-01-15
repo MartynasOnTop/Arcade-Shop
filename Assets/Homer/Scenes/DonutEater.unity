@@ -3004,7 +3004,7 @@ MonoBehaviour:
   eatables:
   - {fileID: 85485194103845949, guid: 25686f40c399d6c4997ce028c6927e0a, type: 3}
   - {fileID: 3592129456970082047, guid: 3e4709e4c81a48345b309418be731ce5, type: 3}
-  speed: 0.04
+  speed: 6
   scoreText: {fileID: 1304820080}
   sceneName: HomerOver
   hearts:

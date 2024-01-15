@@ -9,5 +9,10 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         transform.position -= new Vector3(0, 1 * speed * Time.deltaTime, 0);
+
+        if (transform.position.y <= -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
