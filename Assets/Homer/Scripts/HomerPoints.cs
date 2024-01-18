@@ -16,9 +16,10 @@ public class HomerPoints : MonoBehaviour
         {
             HomerWalking.health -= damage;
             HomerWalking.score += points;
+
+            Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
 
-            explosion.Play();
         }
     }
     private void Update()

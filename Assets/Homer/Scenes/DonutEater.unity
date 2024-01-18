@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 889736504}
   eatables:
-  - {fileID: 85485194103845949, guid: 25686f40c399d6c4997ce028c6927e0a, type: 3}
+  - {fileID: 8663275406491053227, guid: 25686f40c399d6c4997ce028c6927e0a, type: 3}
   - {fileID: 3592129456970082047, guid: 3e4709e4c81a48345b309418be731ce5, type: 3}
   speed: 6
   scoreText: {fileID: 1304820080}
@@ -4971,7 +4971,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.9466858
+  orthographic size: 4.004472
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
