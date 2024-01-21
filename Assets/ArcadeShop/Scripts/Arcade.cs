@@ -36,4 +36,8 @@ public class Arcade : MonoBehaviour
         Option.SetActive(false);
         priceTag.text = "";
     }
+    private void Update()
+    {
+        DontDestroyOnLoad(machine);
+    }
 }

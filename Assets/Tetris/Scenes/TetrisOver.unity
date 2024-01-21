@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5330458505611331870, guid: bec7a2f283f6df9459ed81915a9deb03, type: 3}
       propertyPath: m_text
-      value: 'Go back to shop
+      value: 'Menu
 
 '
       objectReference: {fileID: 0}

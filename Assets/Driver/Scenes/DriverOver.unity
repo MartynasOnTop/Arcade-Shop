@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5330458505611331870, guid: 13f13a8c1cdfec24086f6aca428b5d46, type: 3}
       propertyPath: m_text
-      value: Go back to shop
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 5330458505611331870, guid: 13f13a8c1cdfec24086f6aca428b5d46, type: 3}
       propertyPath: m_fontColor.b

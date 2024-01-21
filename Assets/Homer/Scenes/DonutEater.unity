@@ -3132,7 +3132,7 @@ MonoBehaviour:
   eatables:
   - {fileID: 2347811328171086847, guid: 0efd26bbe0b8ec8408fb3bc8c576eb68, type: 3}
   - {fileID: 3592129456970082047, guid: 3e4709e4c81a48345b309418be731ce5, type: 3}
-  - {fileID: 3592129456970082047, guid: 3e4709e4c81a48345b309418be731ce5, type: 3}
+  - {fileID: 4132143567529996552, guid: 15de0fe350e6b2b43bd5961e6011f073, type: 3}
   - {fileID: 3592129456970082047, guid: 3e4709e4c81a48345b309418be731ce5, type: 3}
   speed: 6
   scoreText: {fileID: 1304820080}
