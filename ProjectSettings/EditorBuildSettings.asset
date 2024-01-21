@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Driver/Scenes/DriverOver.unity
     guid: 8aa5af1398f6d564a8b1ef2b7021a575
+  - enabled: 1
+    path: Assets/FruitNinja/Scenes/FruitNinja.unity
+    guid: c260f13d8fd454b4490d61d7bdccf30b
+  - enabled: 1
+    path: Assets/FruitNinja/Scenes/NinjaOver.unity
+    guid: 188f3d19717f78b428ed3ff4f40f88d5
   m_configObjects: {}

@@ -27,6 +27,7 @@ public class HomerWalking : MonoBehaviour
     {
         timer = cooldownTimer;
         health = maxHealth;
+        score = 0;
     }
     private void Update()
     {

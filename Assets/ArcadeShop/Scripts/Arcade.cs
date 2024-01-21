@@ -21,21 +21,19 @@ public class Arcade : MonoBehaviour
         {
             Option.SetActive(true);
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        Option.SetActive(false);
-        priceTag.text = "";
-    }
-    private void Update()
-    {
         if (Input.GetKeyDown(KeyCode.E) & Option.active)
         {
             playPosition.SetActive(true);
+            GameManager.money -= price;
             machine.SetActive(true);
             Destroy(gameObject);
             Option.SetActive(false);
             priceTag.text = "";
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Option.SetActive(false);
+        priceTag.text = "";
     }
 }

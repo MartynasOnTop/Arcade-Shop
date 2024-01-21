@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FruitSpawner : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FruitSpawner : MonoBehaviour
     public float speed = 20f;
 
     public TMP_Text scoreText;
+    public TMP_Text healthText;
 
     public Transform trailPoint;
 
@@ -22,6 +24,7 @@ public class FruitSpawner : MonoBehaviour
     private void Start()
     {
         Timer = defaultTimer;
+        Health = 3;
     }
     private void Update()
     {
@@ -31,6 +34,7 @@ public class FruitSpawner : MonoBehaviour
         trailPoint.position = mousePos - Vector3.back;
 
         scoreText.text = "Score: " + score.ToString();
+        healthText.text = Health.ToString();
 
         if (Timer <= 0)
         {
@@ -43,6 +47,10 @@ public class FruitSpawner : MonoBehaviour
             rb.AddForce(Vector2.right * Random.Range(-150, 150));
 
             Timer = defaultTimer;
+        }
+        if (Health <= 0)
+        {
+            SceneManager.LoadScene("NinjaOver");
         }
     }
 }

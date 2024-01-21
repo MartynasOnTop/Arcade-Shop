@@ -11,6 +11,7 @@ public class SnakeMove : MonoBehaviour
     public float bodySpeed = 5;
 
     public GameObject apple;
+    public AudioClip eat;
 
     public GameObject bodyPrefab;
     private List<GameObject> BodyParts = new List<GameObject>();
@@ -19,7 +20,7 @@ public class SnakeMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(apple, new Vector3(Random.Range(-9, 9), 3.1f, Random.Range(-9, 9)), Quaternion.identity);
+        SpawnApple();
     }
 
     // Update is called once per frame
@@ -54,13 +55,19 @@ public class SnakeMove : MonoBehaviour
         if (collision.gameObject.name.Contains("apple"))
         {
             Destroy(collision.gameObject);
+            AudioSource.PlayClipAtPoint(eat, transform.position);
             Grow();
-            Instantiate(apple, new Vector3(Random.Range(-9, 9), 3.1f, Random.Range(-9, 9)), Quaternion.identity);
+            SpawnApple();
         }
         if (collision.gameObject.name.Contains("Body") || collision.gameObject.name.Contains("Wall"))
         {
             SceneManager.LoadScene("SnakeOver");
         }
     }
+    private void SpawnApple()
+    {
+        Instantiate(apple, new Vector3(Random.Range(-9, 9), 3.1f, Random.Range(-9, 9)), Quaternion.identity);
+    }
+
 }
 

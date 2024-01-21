@@ -163,4 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   points: 100
-  explosion: {fileID: 5279446745913058193, guid: c7fcb6a8d44d8bc47a6c5d775da18d21, type: 3}
+  explosionSound: {fileID: 8300000, guid: b11e93ecf8f33f24ca4f1e2776e02495, type: 3}
+  explosion: {fileID: 4405401732065466032, guid: 443ccf3ca9ee91f4ba06748e5c0be47b, type: 3}

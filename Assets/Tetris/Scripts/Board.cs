@@ -7,6 +7,8 @@ public class Board : MonoBehaviour
 {
     public string sceneName = "TetrisOver";
     int score;
+
+    public AudioClip point;
     public TMP_Text scoreText;
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
@@ -167,6 +169,7 @@ public class Board : MonoBehaviour
 
             row++;
         }
+        AudioSource.PlayClipAtPoint(point, Vector3.zero);
     }
 
 }
